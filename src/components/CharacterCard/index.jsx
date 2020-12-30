@@ -13,14 +13,5 @@ export default function CharacterCard() {
   }, []);
   console.log(result);
 
-  return (
-    <>
-      <div className="cardPerson">
-        {/* <img src="" alt="character image" /> */}
-        {/* <div className="labelName">
-
-        </div> */}
-      </div>
-    </>
-  );
+  return <></>;
 }

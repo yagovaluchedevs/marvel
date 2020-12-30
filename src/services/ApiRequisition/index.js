@@ -5,9 +5,10 @@ async function ApiRequisition() {
   try {
     const date = new Date();
     const timeStamp = date.getTime();
-    const privateKey = "58099b87ab90d571e077c6776aeb543299bc9153";
-    const publicKey = "a84c44c7b0d90ee4de0b3b73fd36c1c8";
+    const privateKey = process.env.REACT_APP_PRIVATE_KEY_API;
+    const publicKey = process.env.REACT_APP_PUBLIC_KEY_API;
     const md5 = MD5(timeStamp + privateKey + publicKey);
+
     const api = axios.create({
       baseURL: "https://gateway.marvel.com:443",
     });

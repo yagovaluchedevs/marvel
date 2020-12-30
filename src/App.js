@@ -1,11 +1,14 @@
 // import CharactersColletion from "./page/charactersCollection";
 
-import CharacterCard from "./components/CharacterCard";
+import CardComponent from "./components/CardComponent";
+
+// import CharacterCard from "./components/CharacterCard";
 
 function App() {
   return (
     <div className="App">
-      <CharacterCard />
+      {/* <CharacterCard /> */}
+      <CardComponent />
     </div>
   );
 }
