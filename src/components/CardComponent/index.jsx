@@ -1,15 +1,25 @@
-import { ContainerCard, ImageCard } from "./styles";
-import marvel from "../../assets/marvel.png";
+import {
+  ContainerCard,
+  ImageCard,
+  ContainerPosition,
+  EncompassingTheContainer,
+  ContainerCharacterName,
+  TextCharacterName,
+} from "./styles";
 
 export default function CardComponent({ characterImage, characterName }) {
   return (
     <>
       <ContainerCard>
-        <ImageCard src={marvel} alt="character Image" />
+        <ImageCard src={characterImage} alt="character Image" />
 
-        <div>
-          <label>{characterName}</label>
-        </div>
+        <ContainerPosition>
+          <EncompassingTheContainer>
+            <ContainerCharacterName>
+              <TextCharacterName>{characterName}</TextCharacterName>
+            </ContainerCharacterName>
+          </EncompassingTheContainer>
+        </ContainerPosition>
       </ContainerCard>
     </>
   );
