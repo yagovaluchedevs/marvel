@@ -4,6 +4,7 @@ export const ContainerCard = styled.div`
   position: relative;
   width: 450px;
   height: 220px;
+  border: 1.5px solid black;
 `;
 
 export const ContainerPosition = styled.div`
@@ -18,13 +19,13 @@ export const EncompassingTheContainer = styled.div`
   align-items: flex-end;
 `;
 export const ContainerCharacterName = styled.div`
-  background-color: white;
+  background-color: #f2edf2;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 15px;
   border: 1px solid #3331;
-  width: 100%;
+  width: 95%;
   height: 30px;
 `;
 
@@ -36,6 +37,7 @@ export const ImageCard = styled.img`
 `;
 
 export const TextCharacterName = styled.label`
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
 `;

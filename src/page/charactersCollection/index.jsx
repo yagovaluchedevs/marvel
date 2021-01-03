@@ -1,17 +1,17 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import ApiRequisition from "../../services/ApiRequisition";
+import Header from "../../components/Header";
+import CharacterCard from "../../components/CharacterCard";
+import { GaleryCard } from "./styles";
+import { useState } from "react";
 
-// export default function CharactersColletion() {
-//   const [result, setResult] = useState();
-
-//   useEffect(() => {
-//     async function controlRequest() {
-//       const response = await axios.get(ApiRequisition);
-//       console.log(response);
-//       return response;
-//       //   setResult(response.data.results);
-//     }
-//     controlRequest();
-//   }, []);
-// }
+export default function CharactersColletion() {
+  const [CharacterName, setCharacterName] = useState([]);
+  return (
+    <>
+      <Header onChange={(event) => setCharacterName(event)} />
+      <GaleryCard>
+        <CharacterCard />
+      </GaleryCard>
+    </>
+  );
+  //   Filtrar os cards conforme valor digitado
+}
