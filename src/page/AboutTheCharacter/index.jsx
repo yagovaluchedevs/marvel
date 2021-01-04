@@ -4,6 +4,7 @@ export default function AboutTheCharacter() {
     <>
       <div>
         <CharacterDetails />
+        {/* não esquecer que o name e description está branco e por isso não exibirá */}
       </div>
     </>
   );

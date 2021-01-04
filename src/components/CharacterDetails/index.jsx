@@ -8,40 +8,48 @@ import {
   ContainerImageCharacter,
   CharacterDescriptionContainer,
   Label,
+  DescriptionName,
   DescriptionLabel,
 } from "./styles";
 
 export default function CharacterDetails({ i }) {
   const [result, setResult] = useState({});
   const { id } = useParams();
-
-  useEffect(() => {
-    const character = async () => {
-      const response = await getCharacterById(id);
-      setResult(response);
-      return response;
-    };
-    character();
-  }, []);
+  try {
+    useEffect(() => {
+      const character = async () => {
+        const response = await getCharacterById(id);
+        setResult(response);
+        return response;
+      };
+      character();
+    }, []);
+  } catch (error) {
+    return error;
+  }
 
   const { name, description, thumbnail } = result;
-  console.log(result);
-  // const srcImage = thumbnail.path + "." + thumbnail.extension;
+  if (!thumbnail) {
+    return false;
+  }
+  const srcImage = thumbnail.path + "." + thumbnail.extension;
 
   return (
     <>
       <ContainerDetailsCharacters>
-        <CharacterStorageContainer>
-          <ContainerImageCharacter>
-            <CharactersImage src={i} alt="Imagem do personagem" />
-          </ContainerImageCharacter>
-          <CharacterDescriptionContainer>
-            <Label>NAME</Label>
-            <DescriptionLabel>{name}</DescriptionLabel>
-            <Label>DESCRIPTION</Label>
-            <DescriptionLabel>{description}</DescriptionLabel>
-          </CharacterDescriptionContainer>
-        </CharacterStorageContainer>
+        <div>
+          <CharacterStorageContainer>
+            <ContainerImageCharacter>
+              <CharactersImage src={srcImage} alt="Imagem do personagem" />
+            </ContainerImageCharacter>
+            <CharacterDescriptionContainer>
+              <Label>NAME</Label>
+              <DescriptionName>{name}</DescriptionName>
+              <Label>DESCRIPTION</Label>
+              <DescriptionLabel>{description}</DescriptionLabel>
+            </CharacterDescriptionContainer>
+          </CharacterStorageContainer>
+        </div>
       </ContainerDetailsCharacters>
     </>
   );
