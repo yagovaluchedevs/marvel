@@ -1,19 +1,7 @@
-// import CharactersColletion from "./page/charactersCollection";
-
-import CharactersColletion from "./page/charactersCollection";
-
-// import Header from "./components/Header";
-
-// import CardComponent from "./components/CardComponent";
+import Routes from "./components/Routes";
 
 function App() {
-  return (
-    <div className="App">
-      {/* <Header /> */}
-      {/* <CardComponent /> */}
-      <CharactersColletion />
-    </div>
-  );
+  return <div className="App">{<Routes />}</div>;
 }
 
 export default App;

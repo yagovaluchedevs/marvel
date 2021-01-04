@@ -1,17 +1,9 @@
-import Header from "../../components/Header";
-import CharacterCard from "../../components/CharacterCard";
-import { GaleryCard } from "./styles";
-import { useState } from "react";
-
+import JoiningComponents from "../../components/JoiningComponents";
+import "./styles.css";
 export default function CharactersColletion() {
-  const [CharacterName, setCharacterName] = useState([]);
   return (
     <>
-      <Header onChange={(event) => setCharacterName(event)} />
-      <GaleryCard>
-        <CharacterCard />
-      </GaleryCard>
+      <JoiningComponents />
     </>
   );
-  //   Filtrar os cards conforme valor digitado
 }

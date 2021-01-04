@@ -7,10 +7,14 @@ import {
   TextCharacterName,
 } from "./styles";
 
-export default function CardComponent({ characterImage, characterName }) {
+export default function CardComponent({
+  characterImage,
+  characterName,
+  onClick,
+}) {
   return (
     <>
-      <ContainerCard>
+      <ContainerCard onClick={onClick}>
         <ImageCard src={characterImage} alt="character Image" />
 
         <ContainerPosition>

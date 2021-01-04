@@ -18,7 +18,7 @@ export default function Header({ onChange }) {
         <SearchContainer>
           <div>
             <InputSearch
-              type="search"
+              type="text"
               name="search"
               placeholder="Digite o personagem.."
               onChange={(event) => onChange(event.target.value)}

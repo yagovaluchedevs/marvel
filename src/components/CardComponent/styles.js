@@ -2,15 +2,24 @@ import styled from "styled-components";
 
 export const ContainerCard = styled.div`
   position: relative;
-  width: 450px;
-  height: 220px;
+  width: 50%;
+  height: 400px;
   border: 1.5px solid black;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ContainerPosition = styled.div`
   position: relative;
   width: 50%;
   height: 90%;
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 `;
 
 export const EncompassingTheContainer = styled.div`

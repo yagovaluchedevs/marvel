@@ -21,3 +21,9 @@ async function ApiRequisition() {
   }
 }
 export default ApiRequisition;
+
+export async function getCharacterById(identifier) {
+  const character = await ApiRequisition();
+  const getCharacters = character.find(({ id }) => id == identifier);
+  return getCharacters;
+}
