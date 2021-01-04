@@ -5,8 +5,10 @@ export const ContainerDetailsCharacters = styled.section`
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
   }
   div {
     @media (max-width: 600px) {

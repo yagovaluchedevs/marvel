@@ -12,7 +12,7 @@ import {
   DescriptionLabel,
 } from "./styles";
 
-export default function CharacterDetails({ i }) {
+export default function CharacterDetails() {
   const [result, setResult] = useState({});
   const { id } = useParams();
   try {
