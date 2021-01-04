@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerDetailsCharacters = styled.section`
+  height: 100vh;
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {

@@ -1,5 +1,5 @@
 import JoiningComponents from "../../components/JoiningComponents";
-import "./styles.css";
+import "../../components/ResetStyles/styles.css";
 export default function CharactersColletion() {
   return (
     <>
