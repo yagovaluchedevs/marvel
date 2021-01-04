@@ -3,7 +3,9 @@ import "../../components/ResetStyles/styles.css";
 export default function CharactersColletion() {
   return (
     <>
-      <JoiningComponents />
+      <section>
+        <JoiningComponents />
+      </section>
     </>
   );
 }

@@ -36,13 +36,14 @@ export const ContainerCharacterName = styled.div`
   border: 1px solid #3331;
   width: 95%;
   height: 30px;
+  transform: skew(-15deg);
 `;
 
 export const ImageCard = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 `;
 
 export const TextCharacterName = styled.label`

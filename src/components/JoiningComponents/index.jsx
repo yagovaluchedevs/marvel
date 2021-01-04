@@ -22,7 +22,7 @@ export default function JoiningComponents() {
       for (let typing = "", i = 0; i < character.length; i++) {
         typing += name[i];
 
-        if (typing == character) {
+        if (typing === character) {
           return name;
         }
       }

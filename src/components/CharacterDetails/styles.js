@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerDetailsCharacters = styled.section`
-  height: 100vh;
+  /* height: 55vh; */
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
@@ -32,7 +32,7 @@ export const ContainerImageCharacter = styled.div`
 export const CharactersImage = styled.img`
   width: 300px;
   height: 250px;
-  object-fit: fill;
+  object-fit: cover;
 `;
 
 export const CharacterDescriptionContainer = styled.div`
@@ -51,7 +51,7 @@ export const Label = styled.label`
   font-size: 15px;
   font-weight: bold;
   padding-bottom: 2px;
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     font-size: 18px;
     text-align: center;
   }
@@ -61,13 +61,26 @@ export const DescriptionLabel = styled.label`
   font-size: 14px;
   color: white;
   padding-bottom: 4px;
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     font-size: 17px;
     margin-top: 5px;
   }
 `;
 export const DescriptionName = styled(DescriptionLabel)`
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     text-align: center;
+  }
+`;
+
+export const ContainerLoop = styled.footer`
+  @media (max-width: 750px) {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    div {
+      width: 358px;
+      justify-content: center;
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import { getCharacterById } from "../../services/ApiRequisition";
+import LoopRails from "../../components/LoopRails";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -10,6 +11,7 @@ import {
   Label,
   DescriptionName,
   DescriptionLabel,
+  ContainerLoop,
 } from "./styles";
 
 export default function CharacterDetails() {
@@ -23,7 +25,7 @@ export default function CharacterDetails() {
         return response;
       };
       character();
-    }, []);
+    }, [id]);
   } catch (error) {
     return error;
   }
@@ -51,6 +53,11 @@ export default function CharacterDetails() {
           </CharacterStorageContainer>
         </div>
       </ContainerDetailsCharacters>
+      <ContainerLoop>
+        <div>
+          <LoopRails id={id} />
+        </div>
+      </ContainerLoop>
     </>
   );
 }

@@ -12,7 +12,7 @@ export const ContainerImageHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     width: 45%;
     display: flex;
     justify-content: flex-start;
@@ -42,6 +42,6 @@ export const InputSearch = styled.input`
   height: 30px;
   &::placeholder {
     font-family: Arial, Helvetica, sans-serif;
-    color: red;
+    color: gray;
   }
 `;
