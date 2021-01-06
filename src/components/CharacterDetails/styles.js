@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerDetailsCharacters = styled.section`
-  /* height: 55vh; */
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
@@ -80,6 +79,8 @@ export const ContainerLoop = styled.footer`
     align-items: flex-end;
     div {
       width: 358px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 `;

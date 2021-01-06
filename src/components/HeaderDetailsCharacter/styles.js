@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerHeaderDetails = styled.header`
   background-color: black;
   height: 50px;
+
   @media (max-width: 320px) {
     width: 105%;
   }
