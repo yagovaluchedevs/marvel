@@ -80,7 +80,6 @@ export const ContainerLoop = styled.footer`
     align-items: flex-end;
     div {
       width: 358px;
-      justify-content: center;
     }
   }
 `;
