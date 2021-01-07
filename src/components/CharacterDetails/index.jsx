@@ -17,18 +17,18 @@ import {
 export default function CharacterDetails() {
   const [result, setResult] = useState({});
   const { id } = useParams();
-  try {
-    useEffect(() => {
+  useEffect(() => {
+    try {
       const character = async () => {
         const response = await getCharacterById(id);
         setResult(response);
         return response;
       };
       character();
-    }, [id]);
-  } catch (error) {
-    return error;
-  }
+    } catch (error) {
+      return error;
+    }
+  }, [id]);
 
   const { name, description, thumbnail } = result;
   if (!thumbnail) {

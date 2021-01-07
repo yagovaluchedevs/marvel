@@ -12,7 +12,6 @@ export default function AboutTheCharacter() {
       <section>
         <HeaderDetailsCharacter onClick={() => redirectHome()} />
         <CharacterDetails />
-        {/* não esquecer que o name e description está branco e por isso não exibirá */}
       </section>
     </>
   );

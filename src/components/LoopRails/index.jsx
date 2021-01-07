@@ -5,17 +5,17 @@ import { ApiRequisitionComics } from "../../services/ApiRequisition";
 
 export default function LopRails({ id }) {
   const [outcome, setOutcome] = useState([]);
-  try {
-    useEffect(() => {
+  useEffect(() => {
+    try {
       async function responseDataComics() {
         const response = await ApiRequisitionComics(id);
         setOutcome(response);
       }
       responseDataComics();
-    }, [id]);
-  } catch (error) {
-    return error;
-  }
+    } catch (error) {
+      return error;
+    }
+  }, [id]);
 
   return (
     <>
