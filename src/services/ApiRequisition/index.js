@@ -15,7 +15,6 @@ async function ApiRequisition() {
     const response = await api.get(
       `/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`
     );
-    console.log(response.data);
     return response.data.data;
   } catch (err) {
     return "error";

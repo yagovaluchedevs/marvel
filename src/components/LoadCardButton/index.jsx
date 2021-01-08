@@ -1,10 +1,10 @@
-import { LoadButton } from "./styles";
-export default function LoadCardButton({ disabled, onClick }) {
+import { ContainerLoadButton, LoadButton } from "./styles";
+export default function LoadCardButton({ onClick }) {
   return (
     <>
-      <LoadButton disabled={disabled} onClick={onClick}>
-        Carregar
-      </LoadButton>
+      <ContainerLoadButton>
+        <LoadButton onClick={onClick}>Carregar</LoadButton>
+      </ContainerLoadButton>
     </>
   );
 }

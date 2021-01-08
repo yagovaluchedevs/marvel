@@ -11,11 +11,13 @@ export default function JoiningComponents() {
   const [result, setResult] = useState([]);
   const [currentCharacter, setCurrentCharacter] = useState(1);
   const [characterByCall, setCharacterByCall] = useState(2);
+  const [limit, setLimit] = useState(0);
 
   useEffect(() => {
     async function awaitRequest() {
       const awaitRequestData = await ApiRequisition();
       setResult(awaitRequestData.results);
+      setLimit(awaitRequestData.limit);
     }
     awaitRequest();
   }, []);
@@ -65,7 +67,11 @@ export default function JoiningComponents() {
             />
           );
         })}
-        <LoadCardButton onClick={() => addNewCharacters()} />
+        {characterByCall < limit ? (
+          <LoadCardButton onClick={() => addNewCharacters()} />
+        ) : (
+          false
+        )}
       </CointainerCards>
     </>
   );
