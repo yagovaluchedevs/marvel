@@ -37,7 +37,7 @@ export const InputSearch = styled.input`
   background-repeat: no-repeat;
   background-position: 100% 3px;
   background-size: 18px;
-  border-radius: 10px;
+  transform: skew(-15deg);
   border: 1.5px solid gray;
   height: 30px;
   &::placeholder {
