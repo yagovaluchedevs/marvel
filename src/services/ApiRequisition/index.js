@@ -24,7 +24,9 @@ export default ApiRequisition;
 
 export async function getCharacterById(identifier) {
   const character = await ApiRequisition();
-  const getCharacters = character.results.find(({ id }) => id == identifier);
+  const getCharacters = character.results.find(
+    ({ id }) => id.toString() === identifier
+  );
   return getCharacters;
 }
 

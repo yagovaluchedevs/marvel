@@ -120,7 +120,7 @@ export var MD5 = function (string) {
     return utftext;
   }
 
-  var x = Array();
+  var x = [];
   var k, AA, BB, CC, DD, a, b, c, d;
   var S11 = 7,
     S12 = 12,

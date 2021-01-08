@@ -9,9 +9,9 @@ import { CointainerCards } from "./styles";
 export default function JoiningComponents() {
   const history = useHistory("");
   const [result, setResult] = useState([]);
-  const [currentCharacter, setCurrentCharacter] = useState(1);
   const [characterByCall, setCharacterByCall] = useState(2);
   const [limitCharacter, setLimitCharacter] = useState(0);
+  const currentCharacter = 1;
 
   useEffect(() => {
     async function awaitRequest() {
@@ -28,11 +28,11 @@ export default function JoiningComponents() {
         typing += name[i];
 
         if (typing === character) {
-          return name;
+          return true;
         }
       }
+      return false;
     });
-
     setResult(filterCardByName);
   }
 
