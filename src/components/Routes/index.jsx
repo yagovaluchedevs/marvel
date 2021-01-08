@@ -6,14 +6,12 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <>
-          <Route exact path="/" component={CharactersColletion} />
-          <Route
-            exact
-            path="/detalhe-do-personagem/:id"
-            component={AboutTheCharacter}
-          />
-        </>
+        <Route exact path="/" component={CharactersColletion} />
+        <Route
+          exact
+          path="/detalhe-do-personagem/:id"
+          component={AboutTheCharacter}
+        />
       </Switch>
     </BrowserRouter>
   );
