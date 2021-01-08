@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
-import { CointainerCards } from "./styles";
+import { useHistory } from "react-router-dom";
 import ApiRequisition from "../../services/ApiRequisition";
 import CardComponent from "../CardComponent";
 import Header from "../Header";
-import { useHistory } from "react-router-dom";
+import LoadCardButton from "../LoadCardButton";
+import { CointainerCards } from "./styles";
 
 export default function JoiningComponents() {
   const history = useHistory("");
   const [result, setResult] = useState([]);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(0);
+  const [currentCharacter, setCurrentCharacter] = useState(1);
+  const [characterByCall, setCharacterByCall] = useState(2);
 
   useEffect(() => {
     async function awaitRequest() {
-      setLoading(true);
       const awaitRequestData = await ApiRequisition();
       setResult(awaitRequestData.results);
-      setLoading(false);
     }
     awaitRequest();
   }, []);
@@ -40,12 +37,24 @@ export default function JoiningComponents() {
   function redirectById(id) {
     history.push(`/detalhe-do-personagem/${id}`);
   }
+
+  const lastCharacterIndex = currentCharacter * characterByCall;
+  const firstCharacterIndex = lastCharacterIndex - characterByCall;
+  const characterBeingDisplayed = result.slice(
+    firstCharacterIndex,
+    lastCharacterIndex
+  );
+
+  function addNewCharacters() {
+    return setCharacterByCall(characterByCall + 2);
+  }
+
   return (
     <>
       <Header onChange={(event) => filteringByName(event)} />
 
       <CointainerCards>
-        {result.map(({ id, name, thumbnail }, index) => {
+        {characterBeingDisplayed.map(({ id, name, thumbnail }, index) => {
           const srcImage = thumbnail.path + "." + thumbnail.extension;
           return (
             <CardComponent
@@ -56,6 +65,7 @@ export default function JoiningComponents() {
             />
           );
         })}
+        <LoadCardButton onClick={() => addNewCharacters()} />
       </CointainerCards>
     </>
   );
