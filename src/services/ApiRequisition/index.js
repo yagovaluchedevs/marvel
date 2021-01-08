@@ -15,7 +15,8 @@ async function ApiRequisition() {
     const response = await api.get(
       `/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`
     );
-    return response.data.data.results;
+    console.log(response.data);
+    return response.data.data;
   } catch (err) {
     return "error";
   }
@@ -24,7 +25,7 @@ export default ApiRequisition;
 
 export async function getCharacterById(identifier) {
   const character = await ApiRequisition();
-  const getCharacters = character.find(({ id }) => id == identifier);
+  const getCharacters = character.results.find(({ id }) => id == identifier);
   return getCharacters;
 }
 
