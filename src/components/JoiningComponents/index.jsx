@@ -11,19 +11,19 @@ export default function JoiningComponents() {
   const [result, setResult] = useState([]);
   const [currentCharacter, setCurrentCharacter] = useState(1);
   const [characterByCall, setCharacterByCall] = useState(2);
-  const [limit, setLimit] = useState(0);
+  const [limitCharacter, setLimitCharacter] = useState(0);
 
   useEffect(() => {
     async function awaitRequest() {
       const awaitRequestData = await ApiRequisition();
       setResult(awaitRequestData.results);
-      setLimit(awaitRequestData.limit);
+      setLimitCharacter(awaitRequestData.limit);
     }
     awaitRequest();
   }, []);
 
   function filteringByName(character) {
-    const filterCardByName = result.filter(({ name }) => {
+    const filterCardByName = characterBeingDisplayed.filter(({ name }) => {
       for (let typing = "", i = 0; i < character.length; i++) {
         typing += name[i];
 
@@ -47,7 +47,7 @@ export default function JoiningComponents() {
     lastCharacterIndex
   );
 
-  function addNewCharacters() {
+  function loadNewCharacters() {
     return setCharacterByCall(characterByCall + 2);
   }
 
@@ -67,8 +67,8 @@ export default function JoiningComponents() {
             />
           );
         })}
-        {characterByCall < limit ? (
-          <LoadCardButton onClick={() => addNewCharacters()} />
+        {characterByCall < limitCharacter ? (
+          <LoadCardButton onClick={() => loadNewCharacters()} />
         ) : (
           false
         )}

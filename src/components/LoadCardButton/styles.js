@@ -4,7 +4,7 @@ export const ContainerLoadButton = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  position: absolute;
+  transform: translate(0, -30px);
 `;
 export const LoadButton = styled.button`
   width: 100px;
@@ -17,7 +17,6 @@ export const LoadButton = styled.button`
   font-size: 15px;
   color: red;
   background-color: #1b1e20;
-  position: fixed;
   &:hover {
     cursor: pointer;
     color: #1b1e20;
