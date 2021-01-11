@@ -44,6 +44,7 @@ export const InputSearch = styled.input`
     width: 200px;
     border-bottom: 1px solid #1b1e20;
     outline: none;
+    color: red;
     &::placeholder {
       font-family: Arial, Helvetica, sans-serif;
       color: red;
