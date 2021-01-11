@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "../../assets/lupa-vermelha.png";
 export const ContainerHeader = styled.header`
   width: 100%;
   display: flex;
@@ -33,15 +32,24 @@ export const SearchContainer = styled.div`
 `;
 
 export const InputSearch = styled.input`
-  background-image: url("https://www.flaticon.com/br/premium-icon/icons/svg/2319/2319177.svg");
-  background-repeat: no-repeat;
-  background-position: 100% 3px;
+  background: url("https://raw.githubusercontent.com/teddiur/marvel-characters/493aecb675ad86a1accb7591c4de7b3ac2e499ce/src/assets/logo/search.svg")
+    no-repeat center right;
   background-size: 18px;
   transform: skew(-15deg);
-  border: 1.5px solid gray;
+  border: none;
+  width: 20px;
   height: 30px;
+  transition: all 0.5s linear;
+  &:focus {
+    width: 200px;
+    border-bottom: 1px solid #1b1e20;
+    outline: none;
+    &::placeholder {
+      font-family: Arial, Helvetica, sans-serif;
+      color: red;
+    }
+  }
   &::placeholder {
-    font-family: Arial, Helvetica, sans-serif;
-    color: gray;
+    color: transparent;
   }
 `;
