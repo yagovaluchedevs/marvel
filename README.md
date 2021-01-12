@@ -7,7 +7,9 @@ Funcionalidade:
 
     2- filtrar os personagens.
 
-    3- clica no card e exibir o nome, decrição e os quadrinhos do personagem .
+    3- clicar no card e exibir o nome, decrição e os quadrinhos do personagem .
+    
+    4- botão para carregar mais personagens que da o efeito de paginação.
 
 # Recursos utilizados
 
