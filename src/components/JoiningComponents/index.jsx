@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import ApiRequisition from "../../services/ApiRequisition";
+import getCharacters from "../../services/ApiRequisition";
 import CardComponent from "../CardComponent";
 import Header from "../Header";
 import LoadCardButton from "../LoadCardButton";
@@ -14,13 +14,20 @@ export default function JoiningComponents() {
   const currentCharacter = 1;
 
   useEffect(() => {
+    let mounted = true;
+
     async function awaitRequest() {
-      const awaitRequestData = await ApiRequisition();
-      setResult(awaitRequestData.results);
-      setLimitCharacter(awaitRequestData.limit);
+      const awaitRequestData = await getCharacters(characterByCall);
+      if (mounted) {
+        setResult([...result, ...awaitRequestData.results]);
+        setLimitCharacter(awaitRequestData.limit);
+      }
     }
     awaitRequest();
-  }, []);
+    return () => {
+      mounted = false;
+    };
+  }, [result, characterByCall]);
 
   function filteringByName(character) {
     const filterCardByName = characterBeingDisplayed.filter(({ name }) => {
@@ -39,7 +46,6 @@ export default function JoiningComponents() {
   function redirectById(id) {
     history.push(`/detalhe-do-personagem/${id}`);
   }
-
   const lastCharacterIndex = currentCharacter * characterByCall;
   const firstCharacterIndex = lastCharacterIndex - characterByCall;
   const characterBeingDisplayed = result.slice(
@@ -48,7 +54,7 @@ export default function JoiningComponents() {
   );
 
   function loadNewCharacters() {
-    return setCharacterByCall(characterByCall + 2);
+    setCharacterByCall(characterByCall + 2);
   }
 
   return (
