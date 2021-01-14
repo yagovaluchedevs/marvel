@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import search from "../../assets/search.svg";
 export const ContainerHeader = styled.header`
   width: 100%;
   display: flex;
@@ -32,8 +33,7 @@ export const SearchContainer = styled.div`
 `;
 
 export const InputSearch = styled.input`
-  background: url("https://raw.githubusercontent.com/teddiur/marvel-characters/493aecb675ad86a1accb7591c4de7b3ac2e499ce/src/assets/logo/search.svg")
-    no-repeat center right;
+  background: url(${search}) no-repeat center right;
   background-size: 18px;
   transform: skew(-15deg);
   border: none;
@@ -45,6 +45,10 @@ export const InputSearch = styled.input`
     border-bottom: 1px solid #1b1e20;
     outline: none;
     color: red;
+    @media (max-width: 280px) {
+      width: 100px;
+      font-size: 8px;
+    }
     &::placeholder {
       font-family: Arial, Helvetica, sans-serif;
       color: red;

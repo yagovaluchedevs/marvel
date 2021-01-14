@@ -9,8 +9,7 @@ o efeito de páginação.
 
 2- implementado um filtro que exibe os personagens de acordo com a procura do usuário.
 
-3- clicar no card para exibir os detalhes do personagem clicado. (inclusive exibindo os quadrinhos no qual aquele personagem participa)
-
+3- clicar no card para exibir os detalhes do personagem clicado. (inclusive exibindo os quadrinhos no qual aquele personagem participa.)
 
 # Recursos utilizados
 

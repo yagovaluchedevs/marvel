@@ -24,19 +24,12 @@ export const ContainerPosition = styled.div`
 
 export const EncompassingTheContainer = styled.div`
   height: 100%;
+  width: 150%;
   display: flex;
   align-items: flex-end;
-`;
-export const ContainerCharacterName = styled.div`
-  background-color: #f2edf2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 15px;
-  border: 1px solid #3331;
-  width: 95%;
-  height: 30px;
-  transform: skew(-15deg);
+  @media (max-width: 750px) {
+    width: 75%;
+  }
 `;
 
 export const ImageCard = styled.img`
@@ -44,6 +37,19 @@ export const ImageCard = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+export const ContainerCharacterName = styled.div`
+  position: relative;
+  background-color: #f2edf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  border: 1px solid #3331;
+  width: 100%;
+  height: 30px;
+  transform: skew(-15deg);
 `;
 
 export const TextCharacterName = styled.label`
