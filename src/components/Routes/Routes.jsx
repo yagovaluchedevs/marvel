@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import CharactersColletion from "../../page/CharactersCollection";
-import AboutTheCharacter from "../../page/AboutTheCharacter";
+import CharactersColletion from "../../page/CharactersCollection/index";
+import AboutTheCharacter from "../../page/AboutTheCharacter/index";
 
 export default function Routes() {
   return (
