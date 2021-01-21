@@ -1,7 +1,7 @@
 import JoiningComponents from "../../components/JoiningComponents";
 import { CreateGlobal } from "../../components/ResetStyles/styles";
 
-export default function CharactersColletion() {
+function CharactersColletion() {
   return (
     <>
       <CreateGlobal />
@@ -9,3 +9,4 @@ export default function CharactersColletion() {
     </>
   );
 }
+export default CharactersColletion;
