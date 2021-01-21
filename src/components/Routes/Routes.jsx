@@ -6,7 +6,7 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/home" component={CharactersColletion} />
+        <Route exact path="/" component={CharactersColletion} />
         <Route
           exact
           path="/detalhe-do-personagem/:id"
