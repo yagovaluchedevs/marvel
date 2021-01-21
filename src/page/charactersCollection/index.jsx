@@ -1,11 +1,11 @@
 import JoiningComponents from "../../components/JoiningComponents";
-import "../../components/ResetStyles/styles.css";
+import { CreateGlobal } from "../../components/ResetStyles/styles";
+
 export default function CharactersColletion() {
   return (
     <>
-      <section>
-        <JoiningComponents />
-      </section>
+      <CreateGlobal />
+      <JoiningComponents />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import CharacterDetails from "../../components/CharacterDetails";
 import HeaderDetailsCharacter from "../../components/HeaderDetailsCharacter";
 import { useHistory } from "react-router-dom";
-import "../../components/ResetStyles/styles.css";
+import { CreateGlobal } from "../../components/ResetStyles/styles";
 export default function AboutTheCharacter() {
   const history = useHistory("");
   function redirectHome() {
@@ -9,10 +9,9 @@ export default function AboutTheCharacter() {
   }
   return (
     <>
-      <section>
-        <HeaderDetailsCharacter onClick={() => redirectHome()} />
-        <CharacterDetails />
-      </section>
+      <CreateGlobal />
+      <HeaderDetailsCharacter onClick={() => redirectHome()} />
+      <CharacterDetails />
     </>
   );
 }
