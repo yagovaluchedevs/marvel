@@ -4,6 +4,7 @@ import getCharacters from "../../services/ApiRequisition";
 import CardComponent from "../CardComponent";
 import Header from "../Header";
 import LoadCardButton from "../LoadCardButton";
+import Loading from "../Loading";
 import { CointainerCards } from "./styles";
 
 export default function JoiningComponents() {
@@ -11,9 +12,12 @@ export default function JoiningComponents() {
   const [result, setResult] = useState([]);
   const [characterByCall, setCharacterByCall] = useState(6);
   const [limitCharacter, setLimitCharacter] = useState(0);
+  const [loading, setLoading] = useState(false);
   const currentCharacter = 1;
+
   useEffect(() => {
     let mounted = true;
+    setLoading(true);
 
     async function awaitRequest() {
       const awaitRequestData = await getCharacters(characterByCall);
@@ -22,6 +26,7 @@ export default function JoiningComponents() {
         setResult([...result, ...awaitRequestData.results]);
         setLimitCharacter(awaitRequestData.limit);
       }
+      setLoading(false);
     }
 
     awaitRequest();
@@ -30,6 +35,9 @@ export default function JoiningComponents() {
     };
   }, [characterByCall]); //eslint-disable-line
 
+  if (loading === true) {
+    return <Loading />;
+  }
   function filteringByName(character) {
     const filterCardByName = result.filter(({ name }) => {
       for (let typing = "", i = 0; i < character.length; i++) {

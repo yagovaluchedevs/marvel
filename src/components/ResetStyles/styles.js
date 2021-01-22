@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import fundo from "../../assets/fundo.jpg";
 
 export const CreateGlobal = createGlobalStyle`
   * {
@@ -6,7 +7,8 @@ export const CreateGlobal = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
-  body {
-    background-color: #1b1e20;
+  html {
+    width: 100%;
+    background: url(${fundo});
   }
 `;
