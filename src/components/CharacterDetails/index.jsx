@@ -13,15 +13,22 @@ import {
   DescriptionLabel,
   ContainerLoop,
 } from "./styles";
+import Loading from "../Loading";
 
 export default function CharacterDetails() {
   const [result, setResult] = useState({});
+  const [loading, setLoading] = useState(false);
   const { id } = useParams();
   useEffect(() => {
     try {
       const character = async () => {
+        setLoading(true);
+
         const response = await getCharacterById(id);
+
+        setLoading(false);
         setResult(response);
+
         return response;
       };
       character();
@@ -30,10 +37,16 @@ export default function CharacterDetails() {
     }
   }, [id]);
 
+  if (loading === true) {
+    return <Loading />;
+  }
+
   const { name, description, thumbnail } = result;
+
   if (!thumbnail) {
     return false;
   }
+
   const srcImage = thumbnail.path + "." + thumbnail.extension;
 
   return (

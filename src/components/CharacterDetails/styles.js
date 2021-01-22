@@ -47,7 +47,7 @@ export const CharacterDescriptionContainer = styled.div`
 
 export const Label = styled.label`
   color: red;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   padding-bottom: 2px;
   @media (max-width: 750px) {
@@ -57,7 +57,7 @@ export const Label = styled.label`
 `;
 
 export const DescriptionLabel = styled.label`
-  font-size: 14px;
+  font-size: 18px;
   color: white;
   padding-bottom: 4px;
   @media (max-width: 750px) {
