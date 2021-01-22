@@ -1,4 +1,4 @@
-import Routes from "./components/Routes/index.jsx";
+import Routes from "./page/Routes";
 
 function App() {
   return <div className="App">{<Routes />}</div>;
