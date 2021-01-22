@@ -9,28 +9,29 @@ import { CointainerCards } from "./styles";
 export default function JoiningComponents() {
   const history = useHistory("");
   const [result, setResult] = useState([]);
-  const [characterByCall, setCharacterByCall] = useState(2);
+  const [characterByCall, setCharacterByCall] = useState(6);
   const [limitCharacter, setLimitCharacter] = useState(0);
   const currentCharacter = 1;
-
   useEffect(() => {
     let mounted = true;
 
     async function awaitRequest() {
       const awaitRequestData = await getCharacters(characterByCall);
+
       if (mounted) {
         setResult([...result, ...awaitRequestData.results]);
         setLimitCharacter(awaitRequestData.limit);
       }
     }
+
     awaitRequest();
     return () => {
       mounted = false;
     };
-  }, [result, characterByCall]);
+  }, [characterByCall]); //eslint-disable-line
 
   function filteringByName(character) {
-    const filterCardByName = characterBeingDisplayed.filter(({ name }) => {
+    const filterCardByName = result.filter(({ name }) => {
       for (let typing = "", i = 0; i < character.length; i++) {
         typing += name[i];
 
@@ -54,7 +55,7 @@ export default function JoiningComponents() {
   );
 
   function loadNewCharacters() {
-    setCharacterByCall(characterByCall + 2);
+    setCharacterByCall(characterByCall + 6);
   }
 
   return (
