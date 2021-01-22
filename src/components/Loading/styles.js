@@ -8,7 +8,7 @@ export const ContainerLoading = styled.section`
 `;
 
 export const ImageLoading = styled.img`
-  object-fit: fill;
+  height: 300px;
   animation: animation-loading 0.9s ease-in-out infinite;
 
   @keyframes animation-loading {
