@@ -23,5 +23,5 @@ o efeito de páginação.
 
 - Axios
 
-#Deploy da aplicação 
+# Deploy da aplicação 
 <a href="https://personagens-marvel.netlify.app/">Marvel</a>
