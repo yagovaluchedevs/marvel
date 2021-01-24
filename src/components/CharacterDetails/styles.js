@@ -47,12 +47,12 @@ export const CharacterDescriptionContainer = styled.div`
 
 export const Label = styled.label`
   color: red;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
-  padding-bottom: 2px;
+  padding-bottom: 5px;
   @media (max-width: 750px) {
-    font-size: 18px;
     text-align: center;
+    color: #1b1e20;
   }
 `;
 
