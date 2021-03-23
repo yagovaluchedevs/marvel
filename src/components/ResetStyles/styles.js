@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import fundo from "../../assets/fundo1.png";
-import fundoQueryfrom from "../../assets/fundo-marvel.jpg";
+import fundo from "../../assets/fundo-avengers.jpg";
 
 export const CreateGlobal = createGlobalStyle`
   * {
@@ -14,9 +13,7 @@ export const CreateGlobal = createGlobalStyle`
     background-size: 100% 112vh;
 
     @media(max-width: 750px){
-      background: url(${fundoQueryfrom});
-      background-size: 100% 100vh;
-
+      background-size: 100vh 100vh;
     }
   }
 `;

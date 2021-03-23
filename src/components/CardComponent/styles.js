@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const ContainerCard = styled.div`
   position: relative;
-  width: 50%;
+  width: 40%;
   height: 400px;
   border: 1.5px solid black;
+  margin: 25px 0;
   @media (max-width: 600px) {
     width: 100%;
+    margin: 0;
   }
   &:hover {
     cursor: pointer;

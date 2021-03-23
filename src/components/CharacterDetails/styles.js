@@ -32,6 +32,7 @@ export const CharactersImage = styled.img`
   width: 300px;
   height: 250px;
   object-fit: cover;
+  border-radius: 25px;
 `;
 
 export const CharacterDescriptionContainer = styled.div`
@@ -46,7 +47,7 @@ export const CharacterDescriptionContainer = styled.div`
 `;
 
 export const Label = styled.label`
-  color: red;
+  color: white;
   font-size: 23px;
   font-weight: bold;
   padding-bottom: 5px;
@@ -58,7 +59,8 @@ export const Label = styled.label`
 
 export const DescriptionLabel = styled.label`
   font-size: 18px;
-  color: white;
+  font-weight: bold;
+  color: rgba(211, 39, 39, 1);
   padding-bottom: 4px;
   @media (max-width: 750px) {
     font-size: 17px;

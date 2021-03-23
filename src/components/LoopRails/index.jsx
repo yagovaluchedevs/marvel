@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Carousel from "react-elastic-carousel";
-import { ImageRails } from "./styles";
+import { ImageRails, ContainerCarousel } from "./styles";
 import { ApiRequisitionComics } from "../../services/ApiRequisition";
 
 export default function LopRails({ id }) {
@@ -20,7 +19,12 @@ export default function LopRails({ id }) {
   return (
     <>
       <div>
-        <Carousel>
+        <ContainerCarousel
+          showArrows={false}
+          focusOnSelect={true}
+          enableAutoPlay={true}
+          autoPlaySpeed={10000}
+        >
           {outcome.map((res, index) => {
             if (!res.images[0]) {
               return false;
@@ -33,7 +37,7 @@ export default function LopRails({ id }) {
               />
             );
           })}
-        </Carousel>
+        </ContainerCarousel>
       </div>
     </>
   );

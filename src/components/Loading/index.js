@@ -1,6 +1,6 @@
 import { ContainerLoading, ImageLoading } from "./styles";
 import "../ResetStyles/styles";
-import ironMan from "../../assets/spiderman.png";
+import ironMan from "../../assets/homem-de-ferro.png";
 
 export default function Loading() {
   return (
